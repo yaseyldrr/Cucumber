@@ -1,0 +1,22 @@
+1- Yeni projeye tıklattım -> Proje tipi olaran MAVEN seçildi
+Java versiyonu olarak en az 11 seçildi.
+
+2- POM.xml (Project Object Model) vağımlılıklara ve ayaarlar dosyasına gerekli
+LIB ler eklendi yani Dependencies düzenlendi.
+
+3- Maven olarak açılan projede aşağıdaki klasör yapısı gözüktü:
+   main: Developer ın source kodları
+   test: Tester ın kodları
+
+4- Maven ın verdiği klasör yapısında Test tarafında Cucumber düzenine uygun
+klasörler açıldı.
+
+     FeatureFiles  ->  Senaryolar burada
+     StepDefiniton ->  Senaryoların çalışan step kodları
+     Pages         ->  Page Object Model e uygun class ve onlara gerekli classlar
+     Utilities     ->  Driver ve diğe tool lar
+     Runners       -> Çalıştırıcılar (buranın xml dosyası gibi)
+
+5- IntelliJ e 2 tane plugin eklenecek
+  1- Cucumber for Java
+  2- Gherkins
