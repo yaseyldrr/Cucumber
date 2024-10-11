@@ -32,10 +32,8 @@ public class _01_LoginSteps {
 
     }
 
-    @Then("User should login succesfully")
-    public void user_should_login_succesfully() {
-        System.out.println("The site access has been verified");
-
-        dc.verifiedContainsText(dc.headText, "Internship");
+    @Then("User should login successfully")
+    public void userShouldLoginSuccessfully() {
+        dc.verifyLoginText(dc.headText,"Internship");
     }
 }
