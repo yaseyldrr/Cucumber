@@ -45,6 +45,38 @@ public class DialogContent extends ParentPage {
 
     @FindBy(xpath = "//ms-text-field[@formcontrolname='shortName' ]//input")
     public WebElement shortName;
+
+    @FindBy(tagName = "mat-panel-description")
+    public WebElement messageBox;
+
+    @FindBy(xpath = "//ms-text-field/input[@placeholder='Name']")
+    public WebElement searchInput;
+
+    @FindBy(xpath = "//ms-search-button/div/button")
+    public WebElement searchButton;
+
+    @FindBy(xpath = "//ms-delete-button//button")
+    public WebElement deleteImageBtn;
+
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement deleteDialogBtn;
+
+
+    public void verifyContainsText(String value) {
+        wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath("//hot-toast-container/div/div/div//*"), 0));
+        Assert.assertTrue(messageBox.getAttribute("innerHTML").toLowerCase().contains(value.toLowerCase()));
+
+        // Ekranda açık mesaj kalmasın
+        new Actions(GWD.getDriver()).sendKeys(Keys.ESCAPE).build().perform();
+    }
+    public void deleteItem(String deleteName){
+        mySendKeys(searchInput,deleteName);
+        myClick(searchButton);
+        //sayfa yenilenen kadar bekle, arama sonuçlanana kadar bekle
+        wait.until(ExpectedConditions.elementToBeClickable(this.searchButton));
+        myClick(deleteImageBtn);
+        myClick(deleteDialogBtn);
+    }
 }
 
 

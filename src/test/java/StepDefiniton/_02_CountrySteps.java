@@ -40,6 +40,7 @@ public class _02_CountrySteps {
 
     @Then("Success message should be displayed")
     public void successMessageShouldBeDisplayed() {
+        dc.verifyContainsText("success");
     }
 
     @When("Create a country name as {string} code as {string}")

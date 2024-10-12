@@ -3,6 +3,7 @@ package StepDefiniton;
 import Pages.DialogContent;
 import Pages.LeftNav;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.apache.commons.lang3.RandomStringUtils;
 
@@ -33,5 +34,15 @@ public class _03_CitizenshipSteps {
         dc.mySendKeys(dc.countryName,countryName);
         dc.mySendKeys(dc.shortName,countryShortCode);
         dc.myClick(dc.saveButton);
+    }
+
+    @Then("Already exist message should be displayed")
+    public void alreadyExistMessageShouldBeDisplayed() {
+        dc.verifyContainsText("already");
+    }
+
+    @When("Delete a Citizenship name as {string}")
+    public void deleteACitizenshipNameAs(String deleteName) {
+        dc.deleteItem(deleteName);
     }
 }

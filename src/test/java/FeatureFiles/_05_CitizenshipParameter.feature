@@ -7,7 +7,7 @@ Feature: Citizenship Functionality
   Background: #Before Senaryo
     Given Navigate to Campus
     When Enter username and password and click login button
-    Then User should login successfully
+    Then User should login succesfully
     And Navigate to Citizenship
 
   Scenario: Create a Citizenship with parameter 1
