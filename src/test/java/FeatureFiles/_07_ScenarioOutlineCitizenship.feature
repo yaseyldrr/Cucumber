@@ -16,7 +16,7 @@ Feature: Citizenship Functionality
     Then Success message should be displayed
 
     Examples:
-      | name     | shortcode  |
+      | name    | shortcode  |
       | ys45yy5 | ydsa8723y4 |
       | ys45yy6 | ydsa8723y3 |
       | ys45yy7 | ydsa8723y2 |
