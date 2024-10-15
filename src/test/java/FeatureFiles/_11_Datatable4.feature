@@ -41,7 +41,7 @@ Feature: Datatable Functionality
       | addButton |
 
     And User sending the keys in Dialog
-      | nameInput | yaseWorld1 |
+      | countryName | yaseWorld1 |
 
     And Click on the element in Dialog
       | saveButton |
@@ -55,24 +55,29 @@ Feature: Datatable Functionality
 
 
   Scenario: Fee Functionality and Delete
+
     And Click on the element in LeftNav
       | setup      |
       | parameters |
-      | fee        |
+      | fees       |
 
     And Click on the element in Dialog
       | addButton |
 
     And User sending the keys in Dialog
-      | nameInput | yaseWorld1 |
+      | countryName     | isFee42123 |
+      | countryCode     | 1736612    |
+      | integrationCode | 1221       |
+      | priorityCode    | 45555561   |
 
     And Click on the element in Dialog
-      | saveButton |
+      | toggleBar |
+      | saveClose |
 
     Then Success message should be displayed
 
     And User deletes the element from Dialog
-      | yaseWorld1 |
+      | isFee2123 |
 
     Then Success message should be displayed
 

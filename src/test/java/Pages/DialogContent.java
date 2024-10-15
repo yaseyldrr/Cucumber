@@ -10,6 +10,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
+import java.util.List;
+
 public class DialogContent extends ParentPage {
 
     public DialogContent() { // Constructor: elemanları başlatmak için
@@ -61,6 +63,24 @@ public class DialogContent extends ParentPage {
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement deleteDialogBtn;
 
+    @FindBy(xpath = "//ms-text-field[@formcontrolname='budgetAccountIntegrationCode']//input")
+    public WebElement integrationCode;
+
+    @FindBy(xpath = "//ms-integer-field[@formcontrolname='priority']//input")
+    public WebElement priorityCode;
+
+    @FindBy(xpath = "//mat-slide-toggle[@formcontrolname='active']//button")
+    public WebElement toggleBar;
+
+    @FindBy(xpath = "(//ms-save-button[@class='ng-star-inserted']//button)[2]")
+    public WebElement saveClose;
+
+    @FindBy(xpath = "(//mat-select/div/div/span)[3]")
+    public WebElement countrySelect;
+
+    @FindBy(xpath = "(//mat-option)[835]")
+    public WebElement uruguay;
+
 
     public void verifyContainsText(String value) {
         wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath("//hot-toast-container/div/div/div//*"), 0));
@@ -81,9 +101,16 @@ public class DialogContent extends ParentPage {
     public WebElement getWebElement(String elementName) {
         switch (elementName){
             case "addButton" : return this.addButton;
-            case "nameInput" : return this.countryName;
-            case "codeInput" : return this.shortName;
+            case "countryName" : return this.countryName;
+            case "countryCode" : return this.countryCode;
+            case "shortname" : return this.shortName;
             case "saveButton" : return this.saveButton;
+            case "integrationCode" : return this.integrationCode;
+            case "priorityCode" : return this.priorityCode;
+            case "toggleBar" : return this.toggleBar;
+            case "saveClose" : return this.saveClose;
+            case "countrySelect" : return this.countrySelect;
+            case "uruguay" : return this.uruguay;
         }
         return null;
     }

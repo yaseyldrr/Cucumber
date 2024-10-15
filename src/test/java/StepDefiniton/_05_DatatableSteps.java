@@ -28,7 +28,7 @@ public class _05_DatatableSteps {
         List<String> buttons = dtButtons.asList();
 
         for (int i = 0; i < buttons.size(); i++) {
-            ln.myClick(ln.getWebElement(buttons.get(i))); // String adını gönder WebElementi al
+            ln.myClick(dc.getWebElement(buttons.get(i))); // String adını gönder WebElementi al
         }
     }
 
@@ -37,7 +37,7 @@ public class _05_DatatableSteps {
         List<List<String>> boxAndText = dtBoxAndTexts.asLists();
 
         for (int i = 0; i < boxAndText.size(); i++) {
-            WebElement box = dc.getWebElement(boxAndText.get(i).get(1));
+            WebElement box = dc.getWebElement(boxAndText.get(i).get(0));
             dc.mySendKeys(box,boxAndText.get(i).get(1));
         }
     }
@@ -50,4 +50,5 @@ public class _05_DatatableSteps {
             dc.deleteItem(deletions.get(i));
         }
     }
+
 }
