@@ -8,15 +8,15 @@ Feature: Datatable Functionality
   Scenario Outline: Cities Nationality and Delete
 
     And Click on the element in LeftNav
-      | setup      |
-      | parameters |
-      | natioanlities     |
+      | setup         |
+      | parameters    |
+      | nationalities |
 
     And Click on the element in Dialog
-      | addButton     |
+      | addButton |
 
     And User sending the keys in Dialog
-      | countryCode | <name> |
+      | countryName | <name> |
 
     And Click on the element in Dialog
       | saveButton |
@@ -28,7 +28,7 @@ Feature: Datatable Functionality
 
     Then Success message should be displayed
     Examples:
-      | name |
+      | name  |
       | yase1 |
       | yase2 |
       | yase3 |

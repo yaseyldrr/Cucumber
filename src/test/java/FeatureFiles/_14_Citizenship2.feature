@@ -14,7 +14,7 @@ Feature: Datatable Functionality Datatable
     And Click on the element in LeftNav
       | setup      |
       | parameters |
-      | citizeship |
+      | citizenship |
 
     And Click on the element in Dialog
       | addButton |

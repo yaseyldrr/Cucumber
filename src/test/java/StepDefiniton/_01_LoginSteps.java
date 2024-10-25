@@ -14,7 +14,6 @@ public class _01_LoginSteps {
 
         GWD.getDriver().get("https://test.mersys.io/");
         GWD.getDriver().manage().window().maximize();
-
     }
 
     @When("Enter username and password and click login button")

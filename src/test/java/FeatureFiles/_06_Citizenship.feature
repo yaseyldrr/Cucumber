@@ -12,14 +12,17 @@ Feature: Citizenship Functionality
     Then User should login succesfully
     And Navigate to Citizenship
 
+  @RegressionTest @SmokeTest
   Scenario: Create a Citizenship with parameter
     When Create a Citizenship name as "yy12C67567" shortcode as "y455s78645661"
     Then Success message should be displayed
 
+  @RegressionTest
   Scenario: Create a Citizenship with parameter (negative)
     When Create a Citizenship name as "675tgerg4" shortcode as "yy2s8657"
     Then Already exist message should be displayed
 
+  @SmokeTest
   Scenario: Delete the Previously Created Citizenship
     When Delete a Citizenship name as "675tgerg4"
     Then Success message should be displayed
