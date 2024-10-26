@@ -2,10 +2,10 @@ package ApachePOI;
 
 public class _01_2DArray {
     public static void main(String[] args) {
-        String [][] zoo ={
+        String[][] zoo = {
                 {"Aslan", "1"},
-                {"Kaplan","2"},
-                {"Zebra", "3","1"},
+                {"Kaplan", "2"},
+                {"Zebra", "3", "1"},
                 {"Fil", "4"}
         };
 
@@ -24,14 +24,5 @@ public class _01_2DArray {
             System.out.println();
 
         }
-
-
-
-
-
-
-
-
-
     }
 }
