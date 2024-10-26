@@ -1,0 +1,63 @@
+Takım Kimlerden Oluşuyor
+
+PO -> Product Owner
+BA
+Yazılım Mimarı
+Takım : Lead, Scrum Master, dev, tester
+4-5 dev
+4-5 tester
+
+İlk işe girişte:
+  yetki, email, resmi işler (1 ay bile sürebilir)
+  bilgi aktarım(KT) , onlne eğitimler, şirket kültürü
+
+Bilgisayar Ortamları:
+  Dev Ortamı : developerların yazılım geliştirdiği ortam
+  TEST Ortamı : Testlerimizi yaptığımız ortam
+                Test1, Test2, Test3
+  UAT Ortamı :  Tester onayladıkları bu ortama aktarılıyor
+                Kullanıcı burda test edip onay veriyor
+                (User Accept Testing) Ortamı
+  PROD Ortamı : Canlı çalışan ortam, Ürün ortamı, Canlı
+  14 günde 1 canlı güncelleniyor
+
+  Sprint le başlıyor. 14 gün 2 hafta
+
+  bu iş kaç gün sürer, 3 gün sürer, dev bu task atanıyor.
+  aynı anda bu taskı testi bir Tester a task kopyalanıyor Test olarak atanıyor.
+  herkese bu şekilde işler dağıtılıyor.
+
+  Sabahtan işe geldin,
+  1- Emaillerini kontrol ediliyor.
+  2- Akşamdan veya gece çalışan teslerini kontrol ediyorsun (Jenkins)
+  3- 9:15 Günlük toplantı , Daily Meet, Stand-Up
+     dün ne yaptın, bugün planın ne, seni engelleyen bir şey var
+  4-Keni çalışmana başlıyorusun
+    Dev in bitirdiği yazılımlardan sana tanmış taskların Manuel testlerine
+    bu test esnasında ortaya çıkan bug ları, bir Jira kaydı açarak
+    Dev assign ediyorsun.
+    Bir task açarken: kullanıcı ve şifre bu, şu menulerden girdim
+    Ekran aşu bilgilerini girdim ekran görüntüsü de ekliyorsun.
+    Şu butona tıkladığımda ekranda şu hatayı aldım. Hata görüntüsü de
+    Jiraya eklemen lazım (evidance - kanıt)
+
+    Dev-Tester Anlaşmazlığı -> Scrum Master -> Kalite Ortaya çıkıyor
+
+  5-12,13. Günde Herkesin yaptıklarnı anlatması için toplantı yapılıyor DEMO
+    Sprint Review
+
+  6-  Release(Bütün güncellemelerin Canlı ortama aktarma)
+      Günü, dev lead, test lead, iş birimi
+
+      iş birimi(Programı kullanan ve geliştirilmesi için iş gönderen) tes yapıyor,
+
+  7-  Takım Sprint retrospective 15.günde
+      iş akışında neleri iyileştirebiliriz.
+      Neleri artık yapmayalım, yeni neler yapabilir iş akışı için
+
+  8- Gün tamamlanmış oluyor.
+
+  Özel Sağlık Sigorta
+  3 veya 4 ayda bir 1 maaş veren
+
+  İşe girişlerde iş bulma kısmı

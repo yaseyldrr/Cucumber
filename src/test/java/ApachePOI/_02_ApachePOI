@@ -1,0 +1,19 @@
+Interview Sorusu
+1- Excell den veri okumasını nasıl yaparsınız?
+Cevap: ApachePOI ile yaparım.
+
+2- ApachePOI nedir?
+Cevap: Excell den veri okuma ve yazma aracı, kütüphanesi
+
+3- ApachePOI nasıl kullanıyorsun?
+Cevap: FileInputStream oluşturuyorum. (Dosyayı yani excell i okuma için açma)
+FileInputStream -> WorkBook -> Sheet -> Row -> Cell ilişki sırasına göre okuyorum.
+
+
+
+
+WorkBook -> Sheet -> Row -> Cell
+
+Dosya aç - okuma yönü - FileInputStream
+Dosya aç - yazma yönü - FileOutputStream
+

@@ -1,0 +1,90 @@
+ExtendReport İşlemleri
+
+https://www.toolsqa.com/extent-report/extent-report-for-cucumber-testng-project/
+https://medium.com/@kusuma.salinder/extent-report-cucumber6-adapter-not-working-with-selenium-testng-cucumber-3eeef41d5eef
+https://qaautomation.expert/2023/10/21/extentreports-version-5-for-cucumber-7-and-testng/
+https://www.youtube.com/watch?v=2EBg5gmBchg
+
+1- POM a ilgili dependecy eklnir.
+
+        <dependency>
+            <groupId>tech.grasshopper</groupId>
+            <artifactId>extentreports-cucumber7-adapter</artifactId>
+            <version>1.10.1</version>
+        </dependency>
+
+2- Runner Class aşağıdaki plugin eklenir
+   plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
+
+3- test/resources/extent.properties   dosyası resources klasörünün
+   altına açılarak aşağıdaki 2 satır eklendi.
+
+   extent.reporter.spark.start=true
+   extent.reporter.spark.out=test-output/SparkReport/Spark.html
+
+4-  extend report türkçe bilg çalışmaması sebebiyle kondu
+
+     public static WebDriver getDriver() {
+
+           Locale.setDefault(new Locale("EN"));
+           System.setProperty("user.language", "EN");
+
+5- Her raporun ayrı olması için
+   Aşağıdaki kodu extent.properties e ekliyoruz
+
+       #FolderName
+       basefolder.name=Test Reports/TestReport
+       basefolder.datetimepattern=d-MMM-YY HH.mm.ss
+
+6- Rapora Screenshot eklenmesi için
+ https://qaautomation.expert/2022/08/10/how-to-add-screenshot-to-cucumber-extentreports/
+
+       a) extends.properties e aşağıdaki bölüm eklendi
+
+         #screenshot folder and src settings
+         screenshot.dir=test-output/screenshots/
+         screenshot.rel.path=../screenshots/
+
+       b) Hooks a aşağıdaki eklendi
+                  @After
+                  public void after(Scenario senaryo) // Cucumberın ototmarik senaryo ile ilgili bilgiler değişkeni
+                  {
+                      if (senaryo.isFailed()){
+                          TakesScreenshot ts=((TakesScreenshot) GWD.getDriver());
+                          byte[] hafizadakiHali=ts.getScreenshotAs(OutputType.BYTES);
+                          senaryo.attach(hafizadakiHali, "image/png", "screenshot name");
+                      }
+
+                      GWD.quitDriver();
+                  }
+
+ 7- Raporun sonuna istediğimiz açıklamalrı da ekleyebilirzi istersek
+    Runner class içine @AfterClass metodu açarak aşağıdaki şekilde ekleyebiliriz.
+
+ public class _07_ExtendReport extends AbstractTestNGCucumberTests {
+
+
+         @AfterClass
+         public  static void writeExtendReport()
+         {
+                 ExtentService.getInstance().setSystemInfo("Windows User Name", System.getProperty("user.name"));
+                 ExtentService.getInstance().setSystemInfo("Time Zone", System.getProperty("user.timezone"));
+                 ExtentService.getInstance().setSystemInfo("User Name", "İsmet Temur");
+                 ExtentService.getInstance().setSystemInfo("Application Name", "Campus");
+                 ExtentService.getInstance().setSystemInfo("Operating System Info", System.getProperty("os.name"));
+                 ExtentService.getInstance().setSystemInfo("Department", "QA");
+                 ExtentService.getInstance().setSystemInfo("Ek Satır", "Açıklama");
+                 ExtentService.getInstance().setSystemInfo("Ek Satır", "Açıklama");
+                 ExtentService.getInstance().setSystemInfo("Ek Satır", "Açıklama");
+                 ExtentService.getInstance().setSystemInfo("Ek Satır", "Açıklama");
+         }
+ }
+
+ 8-  PDF Report için gerekli işlem
+ https://www.programsbuzz.com/article/extent-pdf-report-cucumber-testng
+
+ extends.properties e aşağıdaki bölüm eklendi
+
+             #PDF Report
+             extent.reporter.pdf.start=true
+             extent.reporter.pdf.out=PdfReport.pdf
