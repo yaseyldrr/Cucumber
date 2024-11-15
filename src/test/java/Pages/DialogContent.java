@@ -81,6 +81,9 @@ public class DialogContent extends ParentPage {
     @FindBy(xpath = "(//mat-option)[835]")
     public WebElement uruguay;
 
+    @FindBy(xpath = "//tbody//tr//td[2]")
+    public List<WebElement> nameList;
+
 
     public void verifyContainsText(String value) {
         wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(By.xpath("//hot-toast-container/div/div/div//*"), 0));
