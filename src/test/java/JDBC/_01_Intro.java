@@ -10,7 +10,7 @@ public class _01_Intro {
         String password = "Techno24Study.%=";
 
         // 1- Bağlantı bilgilerini girdik, DB Server a bağlandık
-        Connection connection = DriverManager.getConnection(url,username,password);
+        Connection connection = DriverManager.getConnection(url, username, password);
 
         // 2- Sorgu ekranını açtık
         Statement queryScreen = connection.createStatement();
@@ -33,7 +33,5 @@ public class _01_Intro {
         connection.close();
 
     }
-
-
 
 }

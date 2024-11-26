@@ -5,18 +5,17 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
-    <artifactId>Cucumber</artifactId>
+    <artifactId>CucumberB6</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <maven.compiler.source>21</maven.compiler.source>
-        <maven.compiler.target>21</maven.compiler.target>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <dependencies>
-
-        <!-- Bana bi Selenium lütfen-->
+        <!-- Bana bi Selenium  -->
         <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
@@ -24,7 +23,7 @@
             <version>4.25.0</version>
         </dependency>
 
-        <!-- Bana bi Cucumber lütfen--><!--Versiyonu TestNG ile aynı olmalı-->
+        <!-- Bana bi Cucumber  -->
         <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
         <dependency>
             <groupId>io.cucumber</groupId>
@@ -33,7 +32,7 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- Bana bi TestNG lütfen-->
+        <!-- Bana bi TestNG    -->
         <!-- https://mvnrepository.com/artifact/org.testng/testng -->
         <dependency>
             <groupId>org.testng</groupId>
@@ -41,6 +40,7 @@
             <version>7.10.2</version>
             <scope>test</scope>
         </dependency>
+
         <!-- Bana bi Cucumber-TestNG  bunun versiyonu Cucumber ile aynı olmalı-->
         <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-testng -->
         <dependency>
@@ -50,7 +50,7 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- Bana bi SLF4J lütfen-->
+        <!--        SLF4J yokedici-->
         <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -58,8 +58,7 @@
             <version>2.0.16</version>
         </dependency>
 
-        <!-- Bana bi Commons lütfen-->
-        <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+        <!--        commons tool-->
         <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -74,6 +73,7 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml <version>5.2.5</version> -->
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi-ooxml</artifactId>
@@ -89,5 +89,76 @@
 
 
     </dependencies>
+
+
+    <!--  Jenkins in Çalıştırma komutunun , nereyi açlıştıracağını belirlediğimiz plugin -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M1</version>
+                <configuration>
+
+                    <!--                    <suiteXmlFiles>-->
+                    <!--                        <suiteXmlFile>testng.xml</suiteXmlFile>-->
+                    <!--                    </suiteXmlFiles>-->
+
+                    <includes>
+                        <!-- for  run class or classes  **/:bulunduğu lokasyonu bütün klasörlere göre bulabiliyor   -->
+                        <include>**/_04_TestRunnerSmoke.java</include>
+                    </includes>
+
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+
+    <profiles>
+        <profile>
+            <id>Smoke_Yeni</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <version>3.0.0-M1</version>
+                        <configuration>
+                            <includes>
+                                <!-- for  run class or classes  **/:bulunduğu lokasyonu bütün klasörlere göre bulabiliyor   -->
+                                <include>**/_04_TestRunnerSmoke.java</include>
+                            </includes>
+
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+
+        </profile>
+
+        <profile>
+            <id>Regression</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <version>3.0.0-M1</version>
+                        <configuration>
+                            <includes>
+                                <!-- for  run class or classes  **/:bulunduğu lokasyonu bütün klasörlere göre bulabiliyor   -->
+                                <include>**/_04_TestRunnerSmoke.java</include>
+                            </includes>
+
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+    </profiles>
+
+
 
 </project>
